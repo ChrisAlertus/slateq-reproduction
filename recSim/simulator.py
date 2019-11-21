@@ -8,6 +8,7 @@ def main():
     pQualityDirection = np.array([0.7,0.3])    
     
     logging.debug("Foo")
+    # Generate from document and topic model
     corpus = createCorpus(numDocuments=numDocuments, numTopics=numTopics,\
                              pQualityDirection=pQualityDirection)
     print(corpus)

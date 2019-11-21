@@ -3,14 +3,15 @@ import numpy as np
 
 class Document:
 
-    def __init__(self, T, pTopic, pLength, pQuality):
+    def __init__(self, name, T, pTopic, pLength, pQuality):
         """
         Constructor for document class: 
             Sets a topic for the document according to the document 
             distribution
         
         Args
-            T : an integer representing the number of potential topics for the document
+            name(str) : a string representing a unique identifier for the document
+            T(int) : an integer representing the number of potential topics for the document
             pTopic : a numpy ndarray where each index represents the probablity a document
                 is about the topic corresponding to that index
             pLength : a scipy distribution function representing the distribution of the length
@@ -23,9 +24,24 @@ class Document:
         topicVector[topicIndex] = 1
         pTopicQuality = pQuality[topicIndex]
 
+        self.name = name
         self.topic =  topicVector
         self.length = pLength.rvs()
         self.quality = pTopicQuality.rvs()
+
+    def isDocument(self, name):
+        """
+        Checks if the document object matches the name provided
+
+        Args:
+            name(str): A string representing the id to check against the
+                document's stored name
+
+        Return:
+            (bool)
+        """
+        
+        return self.name == name
 
 if __name__ == "__main__":
     pass
