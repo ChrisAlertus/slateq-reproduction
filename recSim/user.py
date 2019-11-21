@@ -83,11 +83,19 @@ class User(ABC):
         
         return satisfactionValue
 
+    def consumeDocument(self, document):
+        #TODO
+        # update stats on doc choice
+        
+        # update user interest profile
+        pass
+
     def userSession(self):
         """
         Let the current user experience a session of being recommended items and
-        logging interactions
+        logging interactions. Ends when session time budget hits 0.
         """
+        # TODO
         pass
 
     @abstractmethod

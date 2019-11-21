@@ -35,11 +35,7 @@ class generalConditionalChoiceUser(User):
 
         if userChoice is None:
             userChoiceDocument = "null"
-            # update stats on null choice
-            # TODO
         else:
             userChoiceDocument = userChoice
-            # update stats on doc choice
-            # TODO
 
         return propensities, userChoiceDocument
