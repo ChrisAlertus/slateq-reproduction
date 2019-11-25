@@ -4,7 +4,7 @@ from document import Document
 from probability_distributions import get_truncated_normal
 
 # v(s,i) where i is the null item, constant for all users
-NULL_INTEREST = -0.3
+NULL_INTEREST = 0.05
 # specified in paper: % movmenet beween interest level and extreme for interest
 y = 0.3 
 # specified in paper 

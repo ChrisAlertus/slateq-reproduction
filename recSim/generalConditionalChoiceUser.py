@@ -25,7 +25,8 @@ class generalConditionalChoiceUser(User):
             propensities[idx] = self.inspectDocument(doc)
         
         # adding null document
-        recommendations.append(None)
+        recommendations.append(Document(name="null"))
+        # interest in null doc needs be non-negative. Set in user object
         propensities[-1] = self.nullInterest
 
         # changing doc interests to propensities
@@ -34,9 +35,4 @@ class generalConditionalChoiceUser(User):
         # sample from user choice model
         userChoice = np.random.choice(a=recommendations, p=propensities)
 
-        if userChoice is None:
-            userChoiceDocument = Document(name="null")
-        else:
-            userChoiceDocument = userChoice
-
-        return propensities, userChoiceDocument
+        return propensities, userChoice
