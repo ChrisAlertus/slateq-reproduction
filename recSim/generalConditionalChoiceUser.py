@@ -1,4 +1,5 @@
 from user import User
+from document import Document
 
 class generalConditionalChoiceUser(User):
     
@@ -34,7 +35,7 @@ class generalConditionalChoiceUser(User):
         userChoice = np.random.choice(a=recommendations, p=propensities)
 
         if userChoice is None:
-            userChoiceDocument = "null"
+            userChoiceDocument = Document(name="null")
         else:
             userChoiceDocument = userChoice
 

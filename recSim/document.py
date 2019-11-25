@@ -1,9 +1,11 @@
 import numpy as np
 
+NULL_DOC_LENGTH = 0.5
+NULL_DOC_QUALITY = -0.5
 
 class Document:
 
-    def __init__(self, name, T, pTopic, pLength, pQuality):
+    def __init__(self, name, T=None, pTopic=None, pLength=None, pQuality=None):
         """
         Constructor for document class: 
             Sets a topic for the document according to the document 
@@ -25,9 +27,14 @@ class Document:
         pTopicQuality = pQuality[topicIndex]
 
         self.name = name
-        self.topic =  topicVector
-        self.length = pLength.rvs()
-        self.quality = pTopicQuality.rvs()
+        if self.name != "null":
+            self.topic =  topicVector
+            self.length = pLength.rvs()
+            self.quality = pTopicQuality.rvs()
+        else:
+            self.topic = 0
+            self.length = NULL_DOC_LENGTH
+            self.quality = NULL_DOC_QUALITY
 
     def isDocument(self, name):
         """

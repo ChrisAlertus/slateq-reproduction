@@ -22,5 +22,15 @@ def main():
     print(f"Document 2 length: {corpus[1].length}")
     print(f"Document 2 quality: {corpus[1].quality}")
 
+    # Generate users
+
+    # Generate budget ,
+    
+    # pick a user
+    
+    # Loop: Sample a slate 
+    #       let them interact with items
+    #       update
+
 if __name__ == "__main__":
     main()
